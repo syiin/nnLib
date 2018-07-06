@@ -15,32 +15,27 @@
  * =============================================================================
  */
 
-import * as tf from './index';
+import * as tf from "./index";
 
-describe('Union package', () => {
-  it('has core ops', () => {
+describe("Union package", () => {
+  it("has core ops", () => {
     expect(tf.matMul).not.toBeNull();
     expect(tf.tensor).not.toBeNull();
     expect(tf.scalar).not.toBeNull();
     expect(tf.square).not.toBeNull();
   });
 
-  it('has layers', () => {
+  it("has layers", () => {
     expect(tf.sequential).not.toBeNull();
     expect(tf.model).not.toBeNull();
     expect(tf.layers.dense).not.toBeNull();
   });
 
-  it('has converter', () => {
-    expect(tf.FrozenModel).not.toBeNull();
-    expect(tf.loadFrozenModel).not.toBeNull();
-  });
-
-  it('version', () => {
+  it("version", () => {
     // tslint:disable-next-line:no-require-imports
-    const expected = require('../package.json').version;
+    const expected = require("../package.json").version;
     expect(tf.version.tfjs).toBe(expected);
-    expect(tf.version['tfjs-core']).not.toBeNull();
-    expect(tf.version['tfjs-layers']).not.toBeNull();
+    expect(tf.version["tfjs-core"]).not.toBeNull();
+    expect(tf.version["tfjs-layers"]).not.toBeNull();
   });
 });
